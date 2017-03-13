@@ -3,6 +3,8 @@ var webpackMerge = require('webpack-merge');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var commonConfig = require('./webpack.common.js');
 var helpers = require('./helpers');
+var precss = require('precss');
+var autoprefixer = require('autoprefixer');
 
 const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
 
@@ -16,13 +18,8 @@ module.exports = webpackMerge(commonConfig, {
 		chunkFilename: '[id].[hash].chunk.js'
 	},
 
-	htmlLoader: {
-		minimize: false
-	},
-
 	plugins: [
-		new webpack.NoErrorsPlugin(),
-		new webpack.optimize.DedupePlugin(),
+		new webpack.NoEmitOnErrorsPlugin(),
 		new webpack.optimize.UglifyJsPlugin({
 			mangle: {
 				keep_fnames: true
@@ -32,6 +29,20 @@ module.exports = webpackMerge(commonConfig, {
 		new webpack.DefinePlugin({
 			'process.env': {
 				'ENV': JSON.stringify(ENV)
+			}
+		}),
+		new webpack.LoaderOptionsPlugin({
+			options: {
+				htmlLoader: {
+					minimize: false
+				}
+			}
+		}),
+		new webpack.LoaderOptionsPlugin({
+			options: {
+				postcss: function() {
+					return [precss, autoprefixer];
+				}
 			}
 		})
 	]
