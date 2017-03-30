@@ -1,3 +1,5 @@
+[![license](https://img.shields.io/github/license/TobitSoftware/chayns-template-angular2.svg)]() [![GitHub pull requests](https://img.shields.io/github/issues-pr/TobitSoftware/chayns-template-angular2.svg)]() [![](https://img.shields.io/github/issues-pr-closed-raw/TobitSoftware/chayns-template-angular2.svg)]()
+
 # chayns-template-angular2
 
 A small and simple template for Angular based chayns® tapps.
