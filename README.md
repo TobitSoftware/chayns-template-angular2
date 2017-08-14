@@ -2,11 +2,11 @@
 
 # chayns-template-angular2
 
-A small and simple template for Angular based chayns® tapps.
+A small and simple template for AngularJS based chayns® tapps.
 
 ## Features
 
-- Angular2 with typescript
+- AngularJS with typescript
 - webpack
 - webpack-dev-server
 - scss
@@ -28,6 +28,14 @@ Whenever a change in a project file is made, the server reloads the website.
 ```bash
 npm start
 ```
+
+If you get an 'Invalid Host header' error when accessing the dev-server from ChaynsWeb, 
+append the following to the 'start'-script in 'package.json': ` --public example.org`
+
+```json
+"start": "webpack-dev-server --inline --progress --host 0.0.0.0 --port 8081 --public example.org",
+```
+
 
 ### Build for production
 

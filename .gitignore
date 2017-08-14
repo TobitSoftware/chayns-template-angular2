@@ -28,3 +28,5 @@ npm-debug.log
 
 # Build
 dist
+
+package-lock\.json
