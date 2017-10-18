@@ -2,15 +2,17 @@
 
 # chayns-template-angular2
 
-A small and simple template for AngularJS based chayns® tapps.
+A small and simple template for [Angular](www.angular.io) based chayns® tapps.
 
 ## Features
 
-- AngularJS with typescript
+- Angular with typescript
 - webpack
 - webpack-dev-server
 - scss
 - tslint
+- Ahead of time Compilation
+- Deployment
 
 ## Usage
 
@@ -39,9 +41,18 @@ append the following to the 'start'-script in 'package.json': ` --public example
 
 ### Build for production
 
-The whole project will be built, uglified and sourcemaps will be generated.  
+The whole project will be build, uglified and sourcemaps will be generated.  
 The build output will be available after build in `dist/` dir.
 
 ```bash
 npm run build
+```
+
+### Deploy to server
+
+The `dist/` folder will be deploy to a file server.
+You can specify the path in `webpack/webpack.deploy.js`.
+
+```bash
+npm run deploy
 ```
