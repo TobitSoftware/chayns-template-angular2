@@ -4,9 +4,9 @@
   "description": "A basic template for Angular based chayns tapps",
   "scripts": {
     "clean": "rimraf dist",
-    "start": "webpack-dev-server --inline --progress --port 8080",
-    "build": "npm run clean && webpack --config config/webpack.prod.js --progress --profile --bail",
-    "deploy": "npm run clean && npm run lint && webpack --config config/webpack.prod.dp.js --progress --profile --bail",
+    "start": "webpack-dev-server --inline --progress --port 8081",
+    "build": "npm run clean && webpack --config webpack/webpack.deploy.js --progress --profile --bail",
+    "deploy": "npm run clean && npm run lint && webpack --config webpack/webpack.prod.dp.js --progress --profile --bail",
     "lint": "tslint -c tslint.json -p src/"
   },
   "repository": {
